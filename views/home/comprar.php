@@ -12,7 +12,7 @@ include 'header.php';
 ?>
 
 <script 
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFJsyX2884FeaK5XHJ0WML0w8Y4KRuO_8&libraries=places&callback=initMap" 
+  src="https://maps.googleapis.com/maps/api/js?key=################&libraries=places&callback=initMap" 
   async 
   defer>
 </script>
