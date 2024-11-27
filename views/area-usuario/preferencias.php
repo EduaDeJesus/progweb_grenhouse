@@ -1,31 +1,31 @@
-<?php
-/* @var $this yii\web\View */
 
+<?php
 use yii\helpers\Html;
+use yii\widgets\ActiveForm;
 
 $this->title = 'Preferências do Usuário';
+
+include 'header.php';
+
 ?>
 
-<div class="usuario-preferencias">
+
+<div class="preferencias-form">
+
     <h1><?= Html::encode($this->title) ?></h1>
-    <p>Aqui você pode ajustar as suas preferências de usuário.</p>
+    <p>Atualize seus dados pessoais abaixo:</p>
+    <div class="form-container">
+        <?php $form = ActiveForm::begin(); ?>
 
-    <form method="post">
-        <div class="form-group">
-            <label for="language">Idioma:</label>
-            <select id="language" name="language" class="form-control">
-                <option value="pt">Português</option>
-                <option value="en">Inglês</option>
-                <option value="es">Espanhol</option>
-            </select>
-        </div>
+            <?= $form->field($model, 'nome')->textInput(['maxlength'=> true, 'placeholder' => 'Digite seu nome']) ?>
+            <?= $form->field($model, 'email')->input('email', ['placeholder' => 'Digite seu email']) ?>
+            <?= $form->field($model, 'telefone')->textInput(['maxlength'=> true, 'placeholder' => 'Digite seu telefone']) ?>
+            <?= $form->field($model, 'senha')->passwordInput(['placeholder' => 'Digite sua senha' , 'value' => '',]) ?>
+            <?= $form->field($model, 'senha_confirmacao')->passwordInput(['maxlength' => true, 'placeholder' => 'Confirmar Senha']) ?>
 
         <div class="form-group">
-            <label for="notifications">Notificações:</label>
-            <input type="checkbox" id="notifications" name="notifications" value="1">
-            <label for="notifications">Receber notificações por e-mail</label>
+            <?= Html::submitButton('Salvar Alterações', ['class' => 'btn btn-primary']) ?>
         </div>
-
-        <button type="submit" class="btn btn-primary">Salvar Preferências</button>
-    </form>
+            <?php ActiveForm::end(); ?>
+        </div>
 </div>

@@ -8,7 +8,6 @@ use yii\helpers\Url;
 
 <head>
       <meta charset="utf-8">
-      <meta name="viewport">
       <link rel="icon" type="image/x-icon" href="<?= Yii::getAlias('@web') ?>/assets/img/favicon.ico">
       <link rel="stylesheet" href="../assets/css/style.css"/>
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"/>
@@ -18,9 +17,9 @@ use yii\helpers\Url;
 
 <div class="home-1" style="background-color: #121212;">
         <div class="home-2">
-        <a href="<?= Url::to(['index']) ?>"><img class="icon-logo" alt="" src="../assets/img/greenhouse.png"></a>
+        <a href="<?= Url::to(['/home/index']) ?>"><img class="icon-logo" alt="" src="../assets/img/greenhouse.png"></a>
         <div class="navigation">
-                <a href="<?= Url::to(['comprar']) ?>">Ir para Comprar</a>
+                <a href="<?= Url::to(['/home/comprar']) ?>">Conferir imóveis</a>
         </div>
         <div class="header-buttons">
                 <div class="button21">
@@ -33,14 +32,14 @@ use yii\helpers\Url;
                         
                                 <?php if ($isLoggedIn): ?>
                                         <div class="user-area">
-                                        <button class="area-usuario-text" style="color: white;background-color: #121212; border: 0;" onclick="toggleUserOptions()">Área do usuário</button>
-                                        <div class="user-options" id="user-options">
-                                                <ul>
-                                                <li><a href="<?= Url::to(['usuario/preferencias']) ?>">Preferências</a></li>
-                                                <li><a href="<?= Url::to(['usuario/minhas-compras']) ?>">Minhas compras</a></li>
-                                                <li><a href="<?= Url::to(['site/logout']) ?>">Sair</a></li>
-                                                </ul>
-                                        </div>
+                                                <button class="area-usuario-text" style="color: white; background-color: #121212; border: 0;" onclick="toggleUserOptions()">Área do usuário</button>
+                                                <div class="user-options" id="user-options" style="display: none;">
+                                                        <ul>
+                                                        <li><a href="<?= Url::to(['area-usuario/preferencias']) ?>">Preferências</a></li>
+                                                        <li><a href="<?= Url::to(['area-usuario/meus-imoveis?usuarioID='])?><?=Yii::$app->user->identity->id ?>">Meus imóveis</a></li>
+                                                        <li><a href="<?= Url::to(['area-usuario/logout']) ?>">Sair</a></li>
+                                                        </ul>
+                                                </div>
                                         </div>
                                 <?php endif; ?>
 

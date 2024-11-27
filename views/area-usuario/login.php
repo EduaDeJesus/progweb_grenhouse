@@ -2,12 +2,18 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\Url;
 
 $this->title = 'Login';
 ?>
 <link rel="stylesheet" href="assets/css/style.css"/>
 
 <div class="login-form">
+
+    <div style="display:flex;">
+        <img class="icon-logo" alt="" src="../assets/img/greenhouse.png">
+        <img class="icon-logo" alt="" src="../assets/img/greenhouse-title.png">
+    </div>
 
     <h1 style="font-size:40px;"><?= Html::encode($this->title) ?></h1>
 

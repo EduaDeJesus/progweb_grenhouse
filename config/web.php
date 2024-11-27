@@ -2,6 +2,7 @@
 
     return [
         'id' => 'basic',
+        'language' => 'pt-BR',
         'basePath' => dirname(__DIR__),
         'bootstrap' => ['log'],
         'components' => [
@@ -48,9 +49,9 @@
                         ],
                     ],
                     'yii\web\JqueryAsset' => [
-                        'sourcePath' => null, // indica que o jQuery será fornecido via npm
+                        'sourcePath' => null,
                         'js' => [
-                            '/node_modules/jquery/dist/jquery.min.js', // caminho correto para o jQuery
+                            '/node_modules/jquery/dist/jquery.min.js',
                         ],
                     ],
                 ],

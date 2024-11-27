@@ -2,6 +2,8 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
+include 'header.php';
+
 $this->title = 'Cadastro de Imóvel';
 ?>
 <link rel="stylesheet" href="../assets/css/style.css"/>
@@ -19,8 +21,23 @@ $this->title = 'Cadastro de Imóvel';
         ->textInput(['maxlength' => true, 'placeholder' => 'Endereço']) ?>
     <br>
 
+    <?= $form->field($model, 'descricao', ['labelOptions' => ['style' => 'margin-bottom: 10px; display: block; width:600px;']])
+        ->textarea([
+            'maxlength' => true,
+            'placeholder' => 'Descrição',
+            'rows' => 5,
+            'style' => 'resize: vertical; width: 100%; max-width: 600px;'
+        ]) 
+    ?>
+    <br>
+
     <?= $form->field($model, 'imagemUpload', ['labelOptions' => ['style' => 'margin-bottom: 10px; display: block;']])
         ->fileInput() ?>
+    <br>
+
+    <?= $form->field($model, 'imagensUpload[]', ['labelOptions' => ['style' => 'margin-bottom: 10px; display: block;']])
+    ->fileInput(['multiple' => true]) ?>
+
     <br>
 
     <?= $form->field($model, 'tipo_imovel', ['labelOptions' => ['style' => 'margin-bottom: 10px; display: block;']])

@@ -19,7 +19,7 @@ class Usuario extends ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
-            [['nome', 'email', 'senha'], 'required'],
+            [['nome', 'email', 'senha','telefone'], 'required'],
             [['nome', 'email'], 'string', 'max' => 255],
             ['email', 'email'],
             [['telefone'], 'integer'],
